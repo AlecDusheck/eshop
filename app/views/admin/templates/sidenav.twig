@@ -1,0 +1,88 @@
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">{{ data.site.appName }}</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+            <li class="underline"><a href="/cart">Cart (0)</a></li>
+            <li class="underline"><a href="/explore">Explore</a></li>
+            {% if data.login.isAdmin == true %}
+                <li class="underline"><a href="/admin/home">Admin Dashboard</a></li>
+            {% endif %}
+            {% if data.login.loggedin == true %}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle underline" data-toggle="dropdown">Hi <b>{{ data.login.username }}!</b><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li ><a href="/account">My Account</a></li>
+                        <li><a href="/account/orders">Orders</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/logout">Logout</a></li>
+                    </ul>
+                </li>
+            {% else %}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle underline" data-toggle="dropdown">Hi Guest!</b><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Register</a></li>
+                    </ul>
+                </li>
+            {% endif %}
+        </ul>
+
+    </div>
+</div>
+<div class="navbar-default sidebar" role="navigation">
+    <div class="sidebar-nav navbar-collapse">
+        <ul class="nav" id="side-menu">
+            <li>
+                <a href="/admin/home"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Metrics<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="/admin/metrics/traffic">Traffic</a>
+                    </li>
+                    <li>
+                        <a href="/admin/metrics/orders">Orders</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/admin/customization"><i class="fa fa-gift fa-fw"></i>Customization</a>
+            </li>
+            <li>
+                <a href="/admin/categories"><i class="fa fa-tags fa-fw"></i> Edit Categories</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-cog fa-fw"></i> Items<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="/admin/items/listed">Listed Items</a>
+                    </li>
+                    <li>
+                        <a href="/admin/items/cancelled">Canceled Items</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/admin/orders"><i class="fa fa-cube fa-fw"></i> Orders</a>
+            </li>
+            <li>
+                <a href="/admin/"><i class="fa fa-shopping-cart fa-fw"></i> Sales / Coupon Codes</a>
+            </li>
+            <li>
+                <a href="/admin/"><i class="fa fa-user fa-fw"></i> Users</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /.sidebar-collapse -->
+</div>

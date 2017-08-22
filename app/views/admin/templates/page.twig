@@ -1,0 +1,69 @@
+<!--
+eShop
+_______________________________________________________________________________
+Copyright (C) simplyalec.com - All Rights Reserved
+Unauthorized copying of this file, via any medium is strictly prohibited
+Proprietary and confidential
+Removal of this license voids your ability to possess this software.
+Written by Alec <alec@simplyalec.com>, August 2017
+_______________________________________________________________________________
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if data.page.name is defined %}
+        <title>{{ data.site.appName }} | {{ data.page.name }}</title>
+    {% else %}
+        <title>{{ data.site.appName }}</title>
+    {% endif %}
+    <!-- Icon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicon/apple-touch-icon-57x57.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-touch-icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicon/apple-touch-icon-60x60.png"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicon/apple-touch-icon-120x120.png"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicon/apple-touch-icon-76x76.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicon/apple-touch-icon-152x152.png"/>
+    <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-196x196.png" sizes="196x196"/>
+    <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96"/>
+    <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-16x16.png" sizes="16x16"/>
+    <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-128.png" sizes="128x128"/>
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF"/>
+    <meta name="msapplication-TileImage" content="/assets/img/favicon/mstile-144x144.png"/>
+    <meta name="msapplication-square70x70logo" content="/assets/img/favicon/mstile-70x70.png"/>
+    <meta name="msapplication-square150x150logo" content="/assets/img/favicon/mstile-150x150.png"/>
+    <meta name="msapplication-wide310x150logo" content="/assets/img/favicon/mstile-310x150.png"/>
+    <meta name="msapplication-square310x310logo" content="/assets/img/favicon/mstile-310x310.png"/>
+
+    <!-- Latest CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="stylesheet" href="/assets/admin/css/app.css">
+    <link rel="stylesheet" href="/assets/css/animate.css">
+    <link rel="stylesheet" href="/assets/fa/css/font-awesome.css">
+    <link href="/assets/admin/css/metisMenu.min.css" rel="stylesheet">
+    <link href="/assets/admin/css/morris.min.css" rel="stylesheet">
+
+    <!-- Latest JavaScript -->
+    <script src="/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="/assets/js/global.js"></script>
+    <script src="/assets/js/wow.js"></script>
+    <script> new WOW().init(); </script>
+    <script src="/assets/admin/js/metisMenu.min.js"></script>
+    <script>$(function(){$("#side-menu").metisMenu()}),$(function(){$(window).bind("load resize",function(){var i=50;(this.window.innerWidth>0?this.window.innerWidth:this.screen.width)<768?($("div.navbar-collapse").addClass("collapse"),i=100):$("div.navbar-collapse").removeClass("collapse");var n=(this.window.innerHeight>0?this.window.innerHeight:this.screen.height)-1;(n-=i)<1&&(n=1),n>i&&$("#page-wrapper").css("min-height",n+"px")});for(var i=window.location,n=$("ul.nav a").filter(function(){return this.href==i}).addClass("active").parent();;){if(!n.is("li"))break;n=n.parent().addClass("in").parent()}});</script>
+    <script src="/assets/admin/js/raphael.min.js"></script>
+    <script src="/assets/admin/js/morris.min.js"></script>
+</head>
+<body>
+<div id="wrapper">
+{% include '/admin/templates/sidenav.twig' %}
+{% block content %}{% endblock %}
+</div>
+</body>

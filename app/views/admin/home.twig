@@ -1,0 +1,110 @@
+{% extends "/admin/templates/page.twig" %}
+{% block content %}
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Dashboard</h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="panel panel-yellow">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-shopping-cart fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">0</div>
+                                <div>Orders that need attention.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">
+                        <div class="panel-footer">
+                            <span class="pull-left">View Details</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="panel panel-red">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-paper-plane-o fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">0</div>
+                                <div>Support Tickets that need attention.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">
+                        <div class="panel-footer">
+                            <span class="pull-left">View Details</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> Alerts Panel
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                Actions
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu pull-right" role="menu">
+                                <li><a href="#">Add alert</a>
+                                </li>
+                                <li><a href="#">Remove alert</a>
+                                </li>
+                                <li><a href="#">Edit alert</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">
+                            <i class="fa fa-bell fa-fw"></i> yo alec fix this
+                            <span class="pull-right text-muted small"><em>8/17/2017</em>
+                                    </span>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <i class="fa fa-bell fa-fw"></i> yo alec fix this
+                            <span class="pull-right text-muted small"><em>8/17/2017</em>
+                                    </span>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <i class="fa fa-bell fa-fw"></i> yo alec fix this
+                            <span class="pull-right text-muted small"><em>8/17/2017</em>
+                                    </span>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <i class="fa fa-bell fa-fw"></i> yo alec fix this
+                            <span class="pull-right text-muted small"><em>8/17/2017</em>
+                                    </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /#page-wrapper -->
+{% endblock %}

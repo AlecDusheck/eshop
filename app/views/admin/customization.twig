@@ -1,0 +1,62 @@
+{% extends "/admin/templates/page.twig" %}
+{% block content %}
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Customization</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                {% if data.msgs is defined %}
+                    {% for msg in data.msgs %}
+                        <p class="alert alert-success">{{ msg }}</p>
+                    {% endfor %}
+                {% endif %}
+                {% if data.errors is defined %}
+                    {% for error in data.errors %}
+                        <p class="alert alert-danger">{{ error }}</p>
+                    {% endfor %}
+                {% endif %}
+                <form method="post">
+                    <div class="form-group">
+                        <label for="expban1">Explore Banner #1</label>
+                        <input class="form-control" id="expban1_txt" name="expban1_txt" placeholder="Text" value="{{ data.banners.explr1.content }}">
+                        <input class="form-control" id="expban1_btn" name="expban1_btn" placeholder="Button Value" value="{{ data.banners.explr1.btn_content }}">
+                        <input class="form-control" id="expban1_link" name="expban1_link" placeholder="Button Link" value="{{ data.banners.explr1.btn_link }}">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" id="expban1_enabled" name="expban1_enabled" value="Yes" class="form-check-input"
+                                        {% if data.banners.explr1.enabled == 'true'%}
+                                            checked
+                                        {% endif %}
+                                >
+                                Is Explore Banner #1 enabled?
+                            </label>
+                        </div>
+                        <small id="help" class="form-text text-muted">This is the 1st banner on the Explore Page.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="expban1">Explore Banner #2</label>
+                        <input class="form-control" id="expban2_txt" name="expban2_txt" placeholder="Text" value="{{ data.banners.explr2.content }}">
+                        <input class="form-control" id="expban2_btn" name="expban2_btn" placeholder="Button Value" value="{{ data.banners.explr2.btn_content }}">
+                        <input class="form-control" id="expban2_link" name="expban2_link" placeholder="Button Link" value="{{ data.banners.explr2.btn_link }}">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" id="expban2_enabled" name="expban2_enabled" value="Yes" class="form-check-input"
+                                        {% if data.banners.explr2.enabled == 'true'%}
+                                            checked
+                                        {% endif %}
+                                >
+                                Is Explore Banner #2 enabled?
+                            </label>
+                        </div>
+                        <small id="help" class="form-text text-muted">This is the 2st banner on the Explore Page.</small>
+                    </div>
+                    <hr>
+                    <button class="btn btn-primary">Edit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

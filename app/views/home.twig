@@ -1,0 +1,116 @@
+{% extends "templates/pageSmall.twig" %}
+{% block content %}
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:600,700|Damion' rel='stylesheet' type='text/css'>
+    <style>
+
+        html, body {
+            overflow-x: hidden;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+            position: relative;
+        }
+
+        #wrapper {
+            position: relative;
+            width: 100%;
+            margin: auto;
+        }
+
+        #header {
+            width: 100%;
+            padding: 150px 0 150px 0;
+            margin: auto;
+        }
+
+        h1 {
+            font-family: 'Damion', cursive;
+            font-size: 103px;
+        }
+
+        h2 {
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 30px;
+            letter-spacing: 4px;
+        }
+
+        h2 strong.sep-one {
+            width: 60px;
+            height: 1px;
+            background: #fff;
+            position: absolute;
+            margin-left: -80px;
+            margin-top: 15px;
+        }
+
+        h2 strong.sep-two {
+            width: 60px;
+            height: 1px;
+            background: #fff;
+            position: absolute;
+            margin-left: 15px;
+            margin-top: 15px;
+        }
+
+        .btn {
+            margin-top: 15px;
+        }
+
+        #background {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            z-index: -1;
+        }
+
+        .stretch {
+            width: 100%;
+            height: 100%;
+        }
+
+    </style>
+    <script>
+        $(document).ready(function () {
+            var btnPressed = false;
+            $(".btn").click(function () {
+                if (btnPressed) {
+                    return;
+                }
+                btnPressed = true;
+                $({blurRadius: 0}).animate({blurRadius: 10}, {
+                    duration: 500,
+                    easing: 'swing',
+                    step: function () {
+                        console.log(this.blurRadius);
+                        $('.wrapper').css({
+                            "-webkit-filter": "blur(" + this.blurRadius + "px)",
+                            "filter": "blur(" + this.blurRadius + "px)"
+                        });
+                    }
+                });
+                setTimeout(function () {
+                    window.location.href = "../explore";
+                }, 500);
+            });
+        });
+    </script>
+    <div class="container home">
+        <div id="background">
+            <img src="../assets/img/index.jpg" class="stretch" alt=""/>
+        </div>
+        <div id="wrapper" class="wrapper">
+            <div id="header">
+                <h1 class="wow bounceIn">{{ data.site.appName }}</h1>
+                <h2 class="wow bounceIn"><strong class="sep-one"></strong>Made by Alec Dusheck!<strong
+                            class="sep-two"></strong></h2>
+                <button type="button" class="btn btn-info cst-btn sharp btn-lg wow bounceIn">Explore</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}

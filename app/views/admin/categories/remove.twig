@@ -1,0 +1,40 @@
+{% extends "/admin/templates/page.twig" %}
+{% block content %}
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Remove Category</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                {% if data.errors is defined %}
+                    {% for error in data.errors %}
+                        <p class="alert alert-danger">{{ error }}</p>
+                    {% endfor %}
+                {% endif %}
+                <form method="post">
+                    <div class="form-group">
+                        <label for="category">Category Name</label>
+                        <select class="form-control" name="category" id="category">
+                            {% for category in data.categories.list %}
+                                <option value="{{ category.id }}">{{ category.name }}</option>
+                                {% endfor %}
+                        </select>
+                        <small id="help" class="form-text text-muted">The category will be permanently removed.</small>
+                    </div>
+                    <fieldset class="form-group">
+                        <legend>Options</legend>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" id="removeAllItems" name="removeAllItems" value="Yes" class="form-check-input">
+                                Remove all items under the category. If unchecked, items will be left under the category, but will be harder to find.
+                            </label>
+                        </div>
+                        <hr>
+                        <button class="btn btn-danger">Remove</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

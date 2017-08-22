@@ -1,0 +1,226 @@
+{% extends "templates/page.twig" %}
+{% block content %}
+    <style>
+        body{
+            background-color: #f0eeec;
+        }
+    </style>
+    <div class="container explore">
+        <div class="row">
+            <!-- CATEGORIES-->
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Shop by Category</h4>
+                    </div>
+                    <div class="panel-body">
+                        <ul id="categories-nav" class="nav nav-list">
+                            {% for category in data.categories.list %}
+                                {% if category.isHot == 'true' %}
+                                    <li><a href="/explore/search?category={{ category.id }}"><span class="featured">FEATURED!</span> {{ category.name }}</a></li>
+                                {% else %}
+                                <li><a href="/explore/search?category={{ category.id }}">{{ category.name }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /CATEGORIES-->
+            <!-- CO SIDE-->
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                <!-- SLIDER -->
+                <div class="row">
+                    <div class="col-sm-12 col-lg-12">
+                        <div id="myCarousel" class="carousel slide">
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                                <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img src="assets/img/shopFront1.jpg" alt="Store Front Image #1">
+                                </div>
+                                <div class="item">
+                                    <img src="assets/img/shopFront2.jpg" alt="Store Front Image #2">
+                                </div>
+                                <div class="item">
+                                    <img src="assets/img/shopFront3.jpg" alt="Store Front Image #3">
+                                </div>
+                            </div>
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span
+                                        class="icon-prev"></span></a>
+                            <a class="right carousel-control" href="#myCarousel" data-slide="next"><span
+                                        class="icon-next"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- / SLIDER -->
+                <hr>
+                {% if data.banners.banner1.enabled == 'true' %}
+                <!-- BANNER -->
+                <div class="row">
+                    <div class="col-sm-12 col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-sm-8 col-lg-8">
+                                            <p class="lead text-center">
+                                                {{ data.banners.banner1.content }}
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-4 col-lg-4">
+                                            <a class="btn btn-warning btn-lg btn-block" href="{{ data.banners.banner1.btn_link }}">{{ data.banners.banner1.btn_content }}</a>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /BANNER -->
+                {% endif %}
+                <div class="row">
+                    <!-- PROMOTED ITEM -->
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class="thumbnail">
+                            <!-- IMAGE CONTAINER-->
+                            <img src="http://images.media-allrecipes.com/userphotos/250x250/708879.jpg" alt="Image">
+                            <!--/IMAGE CONTAINER-->
+                            <!-- CAPTION -->
+                            <div class="caption">
+                                <h3 class="">Yo check this thingy out #1</h3>
+                                <p class="">This thing is like $1 off, get it!</p>
+                                <p>
+                                    <a class="" href="#" title="">Details →</a>
+                                </p>
+                            </div>
+                            <!-- /CAPTION -->
+                        </div>
+                    </div>
+                    <!-- /PROMOTED ITEM -->
+                    <!-- PROMOTED ITEM -->
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class="thumbnail">
+                            <!-- IMAGE CONTAINER-->
+                            <img src="http://images.media-allrecipes.com/userphotos/250x250/708879.jpg" alt="Image">
+                            <!--/IMAGE CONTAINER-->
+                            <!-- CAPTION -->
+                            <div class="caption">
+                                <h3 class="">Yo check this thingy out #2</h3>
+                                <p class="">This thing is like $1 off, get it!</p>
+                                <p>
+                                    <a class="" href="#" title="">Details →</a>
+                                </p>
+                            </div>
+                            <!-- /CAPTION -->
+                        </div>
+                    </div>
+                    <!-- /PROMOTED ITEM -->
+                </div>
+                <hr>
+                {% if data.banners.banner2.enabled == 'true' %}
+                    <!-- BANNER -->
+                    <div class="row">
+                        <div class="col-sm-12 col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-sm-8 col-lg-8">
+                                            <p class="lead text-center">
+                                                {{ data.banners.banner2.content }}
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-4 col-lg-4">
+                                            <a class="btn btn-warning btn-lg btn-block" href="{{ data.banners.banner2.btn_link }}">{{ data.banners.banner2.btn_content }}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /BANNER -->
+                {% endif %}
+                <hr>
+                <!-- ITEMS GRID -->
+                <div class="container-folio row">
+                    <!-- ITEM -->
+                    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                        <div class="thumbnail">
+                            <!-- IMAGE CONTAINER-->
+                            <img src="http://images.media-allrecipes.com/userphotos/250x250/708879.jpg" alt="Image">
+                            <!-- /IMAGE CONTAINER-->
+                            <!-- CAPTION -->
+                            <div class="caption">
+                                <h3 class="">Lame item</h3>
+                                <p class="">This is some pretty trashy cake</p>
+
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <p class="lead">$69.69</p>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <a class="btn btn-success btn-block" href="#">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /CAPTION -->
+                        </div>
+                    </div>
+                    <!-- /ITEM -->
+                    <!-- ITEM -->
+                    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                        <div class="thumbnail">
+                            <!-- IMAGE CONTAINER-->
+                            <img src="http://images.media-allrecipes.com/userphotos/250x250/708879.jpg" alt="Image">
+                            <!-- /IMAGE CONTAINER-->
+                            <!-- CAPTION -->
+                            <div class="caption">
+                                <h3 class="">Lame item</h3>
+                                <p class="">This is some pretty trashy cake</p>
+
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <p class="lead">$69.69</p>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <a class="btn btn-success btn-block" href="#">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /CAPTION -->
+                        </div>
+                    </div>
+                    <!-- /ITEM -->
+                    <!-- ITEM -->
+                    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                        <div class="thumbnail">
+                            <!-- IMAGE CONTAINER-->
+                            <img src="http://images.media-allrecipes.com/userphotos/250x250/708879.jpg" alt="Image">
+                            <!-- /IMAGE CONTAINER-->
+                            <!-- CAPTION -->
+                            <div class="caption">
+                                <h3 class="">Lame item</h3>
+                                <p class="">This is some pretty trashy cake</p>
+
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <p class="lead">$69.69</p>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <a class="btn btn-success btn-block" href="#">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /CAPTION -->
+                        </div>
+                    </div>
+                    <!-- /ITEM -->
+
+                </div>
+
+                <!-- /ITEMS GRID -->
+            </div>
+            <!-- /CO SIDE-->
+        </div>
+{% endblock %}
