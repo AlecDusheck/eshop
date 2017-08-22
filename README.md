@@ -1,5 +1,3 @@
-#eShop
-
 This is eShop, its a rudimentary shop using Paypal and Slim.
 
 This is in-progress, and is a proof and concept.
