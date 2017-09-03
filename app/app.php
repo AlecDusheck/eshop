@@ -21,7 +21,7 @@ $settings = [
     'email' => [
         'host' => 'smtp.gmail.com', /* This line is changeable. */
         'username' => 'a.dusheckirl@gmail.com', /* This line is changeable. */
-        'password' => 'otsjxspbshgugqfj', /* This line is changeable. */
+        'password' => 'ots544fdddswgqfj', /* This line is changeable. */
         'port' => '587', /* TLS PORT - This line is changeable.*/
         'email' => 'a.dusheckirl@gmail.com' /* This line is changeable. */
     ],
